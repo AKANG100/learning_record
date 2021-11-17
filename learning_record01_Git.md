@@ -61,6 +61,10 @@
 
 ##### (1)添加远程仓库
 
+* ```
+  git remote add origin git@github.com:AKANG100/learngit.git  // 关联远程库
+  ```
+
 * 本地做了提交
 
 * git push origin master         // 推送最新更改
