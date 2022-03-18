@@ -10,11 +10,11 @@
 
  去 [官网](https://www.hikrobotics.com/cn/machinevision/service/download) 下载两个软件安装，分别是客户端和开发环境。**（这里我们下载V2.1.1（Linux）和Runtime组件包（Linux））**。
 
-![本地绝对路径](/home/rm/图片/工业相机文档/官网下载界面.png"下载界面")
+![本地绝对路径](工业相机文档/官网下载界面.png"下载界面")
 
 安装包里有各个系统及arm开发板使用的安装包，选择相应的安装包进行安装**（这里我们选择最后一个）**：
 
-![本地绝对路径](/home/rm/图片/工业相机文档/安装包中的不同安装版本.png"安装包中的不同安装版本")
+![本地绝对路径](工业相机文档/安装包中的不同安装版本.png"安装包中的不同安装版本")
 
 右键提取，进入提取后的文件夹，右键打开终端。
 
@@ -34,17 +34,17 @@ rm@rm:~/下载/MVS-2.1.1_x86_64_20211224$ ./setup.sh
 
 安装完成后，/opt路径下会生成MVS文件夹，包含以下内容：
 
-![本地绝对路径](/home/rm/图片/工业相机文档/MVS文件夹.png"MVS文件夹")
+![本地绝对路径](工业相机文档/MVS文件夹.png"MVS文件夹")
 
 #### 1.3 MVS客户端的运行
 
 进入bin目录，运行MVS，即可打开客户端
 
-![本地绝对路径](/home/rm/图片/工业相机文档/运行MVS.png"运行MVS")
+![本地绝对路径](工业相机文档/运行MVS.png"运行MVS")
 
 连接海康工业相机之后，通过其官方提供的MVS客户端，我们可以设置相关相机参数，来调整图像，达到我们想要的效果，**但是如此众多的相机参数，我们该如何集成进入我们程序呢，接下来就是我们的SDK二次开发**。
 
-![本地绝对路径](/home/rm/图片/工业相机文档/MVS运行界面.png"MVS运行界面")
+![本地绝对路径](工业相机文档/MVS运行界面.png"MVS运行界面")
 
 
 
@@ -56,17 +56,17 @@ rm@rm:~/下载/MVS-2.1.1_x86_64_20211224$ ./setup.sh
 
 * 通用接口把相机参数，分成六大类，除command参数外，每一类提供Set/Get接口来设置与获取相关节点
 
-<img src="/home/rm/图片/工业相机文档/参数类型.png" alt="本地绝对路径" title="参数类型" style="zoom:150%;" />
+<img src="工业相机文档/参数类型.png" alt="本地绝对路径" title="参数类型" style="zoom:150%;" />
 
 ​		如整形数据的获取与设置
 
-<img src="/home/rm/图片/工业相机文档/获取整型数据.png" alt="本地绝对路径" title="获取整型数据" style="zoom:100%;" />
+<img src="工业相机文档/获取整型数据.png" alt="本地绝对路径" title="获取整型数据" style="zoom:100%;" />
 
-<img src="/home/rm/图片/工业相机文档/设置整型数据.png" alt="本地绝对路径" title="设置整型数据" style="zoom:100%;" />
+<img src="工业相机文档/设置整型数据.png" alt="本地绝对路径" title="设置整型数据" style="zoom:100%;" />
 
 * 相机所有开放的属性值都可参考 [相机参数节点表](file:///opt/MVS/doc/Machine%20Vision%20Camera%20SDK%20(C)_Developer%20Guide_V3.2.0_CH/html/_xE7_x9B_xB8_xE6_x9C_xBA_xE5_x8F_x82_xE6_x95_xB0_xE8_x8A_x82_xE7_x82_xB9_xE8_xA1_xA8.html) 进行查询，此节点表对每个节点的名称、数据类型、数值范围定义、访问模式和节点描述进行了详细说明。对着表可以对参数进行详细的设置。
 
-  <img src="/home/rm/图片/工业相机文档/参数节点表.png" alt="本地绝对路径" title="参数节点表" style="zoom:150%;" />
+  <img src="工业相机文档/参数节点表.png" alt="本地绝对路径" title="参数节点表" style="zoom:150%;" />
 
 
 
@@ -77,7 +77,7 @@ rm@rm:~/下载/MVS-2.1.1_x86_64_20211224$ ./setup.sh
 
 * 在MVS中找到自己想要的参数，鼠标选中它，在MVS右下角，参数描述中，能看看该参数的节点名、类型、取值范围、步进等信息
 
-<img src="/home/rm/图片/工业相机文档/MVS中参数设置.png" alt="本地绝对路径" title="MVS中参数设置" style="zoom:80%;" />
+<img src="工业相机文档/MVS中参数设置.png" alt="本地绝对路径" title="MVS中参数设置" style="zoom:80%;" />
 
 ​     上图可知，图像宽度“Height”，其节点名为“Height”，类型是“int”，取值范围是32~2480,步进是2；根据类型，我们就可以选用      MV_CC_GetIntValue/MV_CC_SetIntValue来对该属性进行操作；
 
